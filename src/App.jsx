@@ -4,7 +4,7 @@ import Body from "./components/body";
 import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
 
   const handleIncreaseCount = () => {
     setCount((prev) => prev + 1);
@@ -35,7 +35,7 @@ function App() {
   };
 
   const handleReset = () => {
-    setCount(1);
+    setCount(0);
   };
 
   return (
@@ -43,15 +43,15 @@ function App() {
       <Navbar />
       <Body />
       <div style={{ textAlign: "center", margin: "20px" }}>
-        <button onClick={handleDecreaseCount}>Decrease</button>
-        <button onClick={handleIncreaseByFive}>Increase by 5</button>
-        <button onClick={handleDecreaseByFive}>Decrease by 5</button>
-        <button onClick={handleDivideByTen}>Divide by 10</button>
-        <button onClick={handleMultiplyByTen}>Multiply by 10</button>
-        <button onClick={handleSetValueToThousand}>Set Value to 1000</button>
-        <button onClick={handleReset}>Reset</button>
-        <div>Value of count = {count}</div>
-        <button onClick={handleIncreaseCount}>Increase</button>
+        <div style={{ textAlign: "center", margin: "30px 0", fontSize: "32px", fontWeight: "bold" }}>Value of count = {count}</div>
+        <button style={{ margin: "10px", padding: "10px 20px", textAlign: "center", fontSize: "18px" }} onClick={handleIncreaseCount}>Increase</button>
+        <button style={{ margin: "10px", padding: "10px 20px", textAlign: "center", fontSize: "18px" }} onClick={handleDecreaseCount}>Decrease</button>
+        <button style={{ margin: "10px", padding: "10px 20px", textAlign: "center", fontSize: "18px" }} onClick={handleIncreaseByFive}>Increase by 5</button>
+        <button style={{ margin: "10px", padding: "10px 20px", textAlign: "center", fontSize: "18px" }} onClick={handleDecreaseByFive}>Decrease by 5</button>
+        <button style={{ margin: "10px", padding: "10px 20px", textAlign: "center", fontSize: "18px" }} onClick={handleDivideByTen}>Divide by 10</button>
+        <button style={{ margin: "10px", padding: "10px 20px", textAlign: "center", fontSize: "18px" }} onClick={handleMultiplyByTen}>Multiply by 10</button>
+        <button style={{ margin: "10px", padding: "10px 20px", textAlign: "center", fontSize: "18px" }} onClick={handleSetValueToThousand}>Set Value to 1000</button>
+        <button style={{ margin: "10px", padding: "10px 20px", textAlign: "center", fontSize: "18px" }} onClick={handleReset}>Reset</button>
       </div>
       <Footer />
     </>

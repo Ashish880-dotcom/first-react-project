@@ -2,7 +2,7 @@ import React from 'react'
 
 const NavBar = () => {
   return (
-    <div>NavBar</div>
+    <div style={{ fontSize: "20px" }}>NavBar</div>
   )
 }
 
