@@ -1,20 +1,61 @@
+import { useState } from "react";
+import Navbar from "./components/navbar";
+import Body from "./components/body";
+import Footer from "./components/Footer";
 
 function App() {
-  var b=10;
+  const [count, setCount] = useState(1);
 
-  return ( <>
-   Hello   World
-   <p>
-    Hello I am Ashish Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae recusandae dignissimos laudantium non? Nihil ullam labore quae adipisci explicabo amet nobis at voluptates error illum repudiandae magnam, corporis eos provident?
-   </p>
-   <h1>This is my first react project</h1>
-   <div>
-    {b}
-   </div>
-   <input type="text"></input>
-   </>
+  const handleIncreaseCount = () => {
+    setCount((prev) => prev + 1);
+  };
 
-  )   
+  const handleDecreaseCount = () => {
+    setCount((prev) => prev - 1);
+  };
+
+  const handleIncreaseByFive = () => {
+    setCount((prev) => prev + 5);
+  };
+
+  const handleDecreaseByFive = () => {
+    setCount((prev) => prev - 5);
+  };
+
+  const handleDivideByTen = () => {
+    setCount((prev) => prev / 10);
+  };
+
+  const handleMultiplyByTen = () => {
+    setCount((prev) => prev * 10);
+  };
+
+  const handleSetValueToThousand = () => {
+    setCount(1000);
+  };
+
+  const handleReset = () => {
+    setCount(1);
+  };
+
+  return (
+    <>
+      <Navbar />
+      <Body />
+      <div style={{ textAlign: "center", margin: "20px" }}>
+        <button onClick={handleDecreaseCount}>Decrease</button>
+        <button onClick={handleIncreaseByFive}>Increase by 5</button>
+        <button onClick={handleDecreaseByFive}>Decrease by 5</button>
+        <button onClick={handleDivideByTen}>Divide by 10</button>
+        <button onClick={handleMultiplyByTen}>Multiply by 10</button>
+        <button onClick={handleSetValueToThousand}>Set Value to 1000</button>
+        <button onClick={handleReset}>Reset</button>
+        <div>Value of count = {count}</div>
+        <button onClick={handleIncreaseCount}>Increase</button>
+      </div>
+      <Footer />
+    </>
+  );
 }
 
-export default App
+export default App;
