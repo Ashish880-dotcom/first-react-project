@@ -1,15 +1,1 @@
-* {
-  font-size: 18px;
-}
-
-body {
-  font-size: 18px;
-}
-
-button {
-  font-size: 16px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-size: 28px;
-}
+@import "tailwindcss";
