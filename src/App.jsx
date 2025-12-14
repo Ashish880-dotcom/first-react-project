@@ -1,18 +1,31 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router";
-import Home from "./pages/Home";
-import Profile from "./pages/Profile";
-import Settings from "./pages/Settings";
-
-
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 const App = () => {
-  return (
-<Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/profile" element={<Profile />} />
-  <Route path="/settings" element={<Settings />} />
-</Routes>  )
-}
+  const [randomDog, setRandomDog] = useState({});
 
-export default App
+  const handleGenerateNewImage = async () => {
+    try {
+      const response = await axios.get(
+        "https://dog.ceo/api/breeds/image/random "
+      );
+      setRandomDog(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(()=>{
+    handleGenerateNewImage
+
+  },[])
+
+  return (
+    <div className="flex h-screen flex-col items-center gap-10">
+      <div className="text-3xl font-bold"> Random Dog Generator</div>
+      <button className="text-3xl fond-italic border p-3 cursor-p" onClick={handleGenerateNewImage}>Generate</button>
+      <img src={randomDog.message} alt="" />
+    </div>
+  );
+};
+
+export default App;
