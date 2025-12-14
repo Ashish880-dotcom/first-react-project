@@ -14,10 +14,9 @@ const App = () => {
       console.log(error);
     }
   };
-  useEffect(()=>{
-    handleGenerateNewImage
-
-  },[])
+  useEffect(()=> {
+    handleGenerateNewImage();
+  },[]);
 
   return (
     <div className="flex h-screen flex-col items-center gap-10">
