@@ -1,12 +1,26 @@
-import React from 'react'
-import ThemeProvider from './context/ThemeProvider'
+import { ThermometerIcon } from "lucide-react";
+import useTheme from "./hooks/useTheme";
+import ThemeProvider from "./context/ThemeProvider";
 
-const App = () => {
+const Content = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
-   <ThemeProvider>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate laboriosam, cumque dignissimos, illum assumenda labore dolore nihil esse repudiandae temporibus consectetur repellat necessitatibus mollitia ullam eaque? Ea, eius unde? Quos!
-   </ThemeProvider>
-  )
+    <div style={{ padding: "40px" }}>
+      <h1>{theme === "light" ? "🌞 Light Mode" : "🌙 Dark Mode"}</h1>
+      <button onClick={toggleTheme}>
+        Toggle Theme
+      </button>
+    </div>
+  );
+};
+
+function App() {
+  return (
+    <ThemeProvider>
+      <Content />
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
